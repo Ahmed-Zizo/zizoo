@@ -1,0 +1,331 @@
+/* variables */
+:root {
+    --primary-color: #ffc636;
+    --secondary-color: #0a0b5b;
+}
+/* reset */
+body,p,a,ul,li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+  }
+/* base style */
+body {
+    background: var(--secondary-color);
+    overflow-x: hidden;
+    font-family: "rubik";
+}
+.button {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 1px 2px 3px rgb(0 0 0 / 60%);
+    display: inline-block;
+    font-size: 1em;
+}
+.button:hover {
+    background-color: var(--primary-color);
+    color: #222;
+}
+input, textarea {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 2px solid #9893d8;
+    color: #f2f2f2;
+    font-size: 1em;
+}
+/* fonts */
+@font-face {
+    font-family: "rubik";
+    src: url("assets/fonts/Rubik-Regular.ttf");
+}
+h1,h2,h3,h4 {
+    color: #dddbff;
+    font-weight: normal;
+    line-height: 1.4em;/**/
+}
+h1,h3 {
+    font-size: 1.2em;
+}
+h2 {
+    font-size: 1.6em;
+}
+h4 {
+    font-size: 1.1em;
+}
+p,li,a {
+    color: #9893D8;
+    line-height: 1.4em;
+}
+/* mobile style */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    box-sizing: border-box;
+    gap: 10px;
+}
+nav {
+    margin: 0 20px;
+}
+nav.grid ul {
+    display: none;
+}
+nav.grid h1 {
+    grid-column: 1/4;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+#welcome {
+    padding: 0 20px 20px 20px;
+}
+#welcome .welcome-text {
+    grid-column: 1/6;
+}
+#welcome .welcome-text a{
+    margin: 20px 0;
+}
+
+#welcome .welcome-img {
+    grid-column: 6/9;
+}
+#welcome .welcome-img img {
+    width: 200%;
+}
+
+#portofolio {
+    background: url("assets/square_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 30px 20px;
+}
+
+
+#portofolio h3 {
+    margin-bottom: 0;
+    text-align: center;
+}
+#portofolio .grid a {
+    margin: 20px auto;
+    grid-column:1/9;
+    display: flex;
+}
+#portofolio .grid a * {
+    margin: 0 20px;
+    max-width: 40%;
+    align-self: center;
+}
+#portofolio .grid h4 {
+    color: #9994f7;
+}
+
+#skills {
+    padding: 30px 20px;
+    background-color: #07083E;
+}
+#skills h3 {
+    text-align: center;
+}
+
+#skills ul li {
+    background-color: rgba(0,0,0,.2);
+    grid-column: span 4;
+    padding: 10px;
+    text-align: center;
+}
+#skills ul li img {
+    height: 80px;
+    margin: 10px auto;
+}
+#skills ul li p {
+    text-align: center;
+    margin: 0 20px;
+}
+
+
+#contact {
+    padding: 30px 20px;
+    background-color: #080936;
+}
+#contact h3,#contact p {
+    text-align: center;
+    margin-bottom: 0;
+}
+#contact form {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+#contact form textarea,#contact form input {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0;
+}
+#contact form textarea {
+    max-width: 100%;
+    height: 200px;
+}
+#contact form .button{
+    margin-top: 10px;
+}
+footer {
+    padding: 30px 20px;
+    background-color:  #14153d;
+    background-image: url("assets/footer_image.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: top center;
+}
+footer p {
+    grid-column: span 2;
+    font-size: .6em;
+}
+footer ul {
+    grid-column: 7/9;
+    display: flex;
+    justify-content: flex-end;
+}
+footer ul li {
+    margin: 0 10px;
+}
+footer ul li img {
+    width:20px;
+}
+/* tablets style */
+@media screen and (min-width: 620px) {
+    #welcome .welcome-text {
+        grid-column: 1/5;
+    }
+    #welcome .welcome-img {
+        grid-column: 5/9;
+    }
+    #welcome .welcome-img img {
+        width: 100%;
+    }
+    #portofolio .grid {
+        margin-top: 40px;
+    }
+    #portofolio .grid a {
+        grid-column: span 4;
+        display: block;
+        text-align: center;
+    }
+    #portofolio .grid a:last-child {
+        grid-column: 3/7;
+        grid-row: 2;
+    }
+    #portofolio .grid a * {
+        max-width: 60%;
+        display: block;
+        margin: 15px auto;
+    }
+
+    #skills {
+        padding: 30px 100px;
+    }
+    footer {
+        background-size: 20%;
+    }
+}
+/* laptop style */
+@media screen and (min-width: 960px) {
+    body {
+        font-size: 18px;
+    }
+    .grid {
+        width: 100%;
+        max-width: 1060px;
+        margin: 0 auto;
+    }
+    nav {
+        padding: 0 20px;
+    }
+    nav.grid h1 {
+        grid-column: 1/3;
+    }
+    nav.grid ul {
+        display: flex;
+        grid-column: 6/9;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #welcome {
+        padding-bottom: 40px;
+    }
+    
+    #welcome .welcome-text {
+        align-self: center;
+    }
+
+    #welcome .welcome-text p {
+        margin: 20px 0;
+    }
+
+    #portofolio .grid a:nth-child(1) {
+        grid-column: 2/4;
+    }
+    #portofolio .grid a:nth-child(2) {
+        grid-column: 4/6;
+        padding-top: 140px;
+    }
+    #portofolio .grid a:nth-child(3) {
+        grid-column: 6/8;
+        grid-row: 1;
+    }
+    #portofolio .grid a * {
+        max-width: 80%;
+    }
+
+    #skills {
+        padding: 30px 20px;
+    }
+    #skills ul {
+        margin: 40px auto;
+    }
+    #skills ul li {
+        grid-column: span 2;
+    }
+    footer {
+        padding: 40px 20px;
+    }
+}
+/* desktop style */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+
+    #welcome, #portpfolio, #skills, #contact {
+        padding: 90px 0;
+    }
+    #portofolio .grid a:nth-child(1) {
+        grid-column: 1/3;
+    }
+    #portofolio .grid a:nth-child(3) {
+        grid-column: 7/9;
+        grid-row: 1;
+    }
+    #portofolio .grid a * {
+        max-width: 100%;
+        margin: 30px auto;
+    }
+    #contact form {
+        max-width: 700px;
+    }
+    footer {
+        padding: 80px auto;
+        background-size: 30%;
+    }
+    footer img {
+        width: 20px;
+    }
+
+}
